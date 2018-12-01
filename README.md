@@ -34,4 +34,4 @@ Things you need to install the software and how to install them
 
 ## Acknowledgments
 
-* * **Pawan Kumar** - [iampawan](https://github.com/iampawan/)
+* **Pawan Kumar** - [iampawan](https://github.com/iampawan/)
