@@ -3,6 +3,7 @@ import 'package:music_player/pages/root_page.dart';
 import 'package:music_player/widgets/mp_inherited.dart';
 import 'package:flute_music_player/flute_music_player.dart';
 import 'package:flutter/material.dart';
+import 'package:music_player/utils/themes.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   SongData songData;
   bool _isLoading = true;
-  String themeType = 'lightTheme';
+  ThemeData themeType = lightTheme;
 
 
   @override
@@ -52,6 +53,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    // print('from my_app '+ themeType);
     return new MPInheritedWidget(songData, _isLoading, themeType, new RootPage());
   }
 }

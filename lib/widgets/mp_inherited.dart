@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class MPInheritedWidget extends InheritedWidget {
   final SongData songData;
   final bool isLoading;
-  final String themeType;
+  final ThemeData themeType;
 
   const MPInheritedWidget(this.songData, this.isLoading, this.themeType, child)
       : super(child: child);

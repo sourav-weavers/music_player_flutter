@@ -31,11 +31,13 @@ class MyMaterialAppState extends State<MyMaterialApp> {
 
   @override
   Widget build(BuildContext context) {
-    final rootTheme = MPInheritedWidget.of(context).themeType;
+    print(themeType);
+    final rootIw = MPInheritedWidget.of(context);
+    final rootTheme = rootIw?.themeType;
     return new MaterialApp(
         home: new MyApp(),
         debugShowCheckedModeBanner: false, 
-        theme: rootTheme == 'lightTheme' ? lightTheme : darkTheme, 
+        theme: themeType == 'Dark Theme'?darkTheme: lightTheme, 
         );
   }
 }
