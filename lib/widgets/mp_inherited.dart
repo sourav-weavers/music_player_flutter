@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 class MPInheritedWidget extends InheritedWidget {
   final SongData songData;
   final bool isLoading;
+  final String themeType;
 
-  const MPInheritedWidget(this.songData, this.isLoading, child)
+  const MPInheritedWidget(this.songData, this.isLoading, this.themeType, child)
       : super(child: child);
 
   static MPInheritedWidget of(BuildContext context) {
@@ -15,5 +16,5 @@ class MPInheritedWidget extends InheritedWidget {
   @override
   bool updateShouldNotify(MPInheritedWidget oldWidget) =>
       // TODO: implement updateShouldNotify
-      songData != oldWidget.songData || isLoading != oldWidget.isLoading;
+      songData != oldWidget.songData || isLoading != oldWidget.isLoading || themeType != oldWidget.themeType;
 }

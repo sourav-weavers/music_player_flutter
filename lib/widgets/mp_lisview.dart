@@ -18,16 +18,18 @@ class MPListView extends StatelessWidget {
         final MaterialColor color = _colors[index % _colors.length];
         var artFile =
             s.albumArt == null ? null : new File.fromUri(Uri.parse(s.albumArt));
+        print(artFile);
         return new ListTile(
           dense: false,
           leading: new ClipOval(
-            child: artFile == null ?Image.network(
-              "http://www.scottishculture.org/themes/scottishculture/images/music_placeholder.png",
-              fit: BoxFit.cover,
-              width: 40.0,
-              height: 40.0,
-            )
-            : Image.file(artFile,fit: BoxFit.cover, width: 40.0, height: 40.0,)
+            child: artFile == null ? new Image(
+                  image: new AssetImage("assets/music_icon.png"),
+                  fit: BoxFit.cover,
+                  height: 40.0,
+                  width: 40.0,
+                  gaplessPlayback: false,
+                )
+            : new Image(image: new FileImage(artFile),fit: BoxFit.cover, width: 40.0, height: 40.0,)
           ),
           // CircleAvatar(
           //  backgroundImage: NetworkImage('http://www.scottishculture.org/themes/scottishculture/images/music_placeholder.png'),
@@ -39,6 +41,7 @@ class MPListView extends StatelessWidget {
           ),
           onTap: () {
             songData.setCurrentIndex(index);
+            
             Navigator.push(
                 context,
                 new MaterialPageRoute(

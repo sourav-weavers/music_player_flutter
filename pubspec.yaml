@@ -1,5 +1,5 @@
 name: music_player
-description: A new Flutter project.
+description: A Lightweight music player with Material UI.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -20,6 +20,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   flute_music_player: ^0.0.6
+  shared_preferences: ^0.4.3
 
 dev_dependencies:
   flutter_test:
@@ -39,10 +40,11 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/lady.jpeg
    - assets/music_record.jpeg
    - assets/albumPlaceholder.jpg
    - assets/headphones.png
+   - assets/music_icon.png
+   - assets/LiteCover.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

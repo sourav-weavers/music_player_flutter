@@ -23,7 +23,7 @@ class AlbumUIState extends State<AlbumUI> with SingleTickerProviderStateMixin {
     animationController = new AnimationController(
         vsync: this, duration: new Duration(seconds: 1));
     animation = new CurvedAnimation(
-        parent: animationController, curve: Curves.elasticOut);
+        parent: animationController, curve: Curves.easeOut);
     animation.addListener(() => this.setState(() {}));
     animationController.forward();
   }
@@ -53,10 +53,10 @@ class AlbumUIState extends State<AlbumUI> with SingleTickerProviderStateMixin {
                   height: 250.0,
                   gaplessPlayback: true,
                 )
-              : new Image.asset(
-                  "assets/albumPlaceholder.jpg",
+              : new Image(
+                  image: new AssetImage("assets/music_icon.png"),
                   fit: BoxFit.cover,
-                  height: 250.0,
+                  height: 256.0,
                   gaplessPlayback: false,
                 )),
     );

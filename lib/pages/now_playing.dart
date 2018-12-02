@@ -171,6 +171,8 @@ class _NowPlayingState extends State<NowPlaying> {
           duration == null
               ? new Container()
               : new Slider(
+                  activeColor: Theme.of(context).primaryColor,
+                  inactiveColor: Theme.of(context).buttonColor,
                   value: position?.inMilliseconds?.toDouble() ?? 0,
                   onChanged: (double value) =>
                       audioPlayer.seek((value / 1000).roundToDouble()),
@@ -186,31 +188,6 @@ class _NowPlayingState extends State<NowPlaying> {
           ]),
           new Padding(
             padding: const EdgeInsets.only(bottom: 20.0),
-          ),
-          new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              new IconButton(
-                  icon: isMuted
-                      ? new Icon(
-                          Icons.volume_up,
-                          color: Theme.of(context).unselectedWidgetColor,
-                        )
-                      : new Icon(Icons.volume_off,
-                          color: Theme.of(context).unselectedWidgetColor),
-                  color: Theme.of(context).primaryColor,
-                  onPressed: () {
-                    mute(!isMuted);
-                  }),
-              // new IconButton(
-              //     onPressed: () => mute(true),
-              //     icon: new Icon(Icons.headset_off),
-              //     color: Colors.cyan),
-              // new IconButton(
-              //     onPressed: () => mute(false),
-              //     icon: new Icon(Icons.headset),
-              //     color: Colors.cyan),
-            ],
           ),
         ]));
 
@@ -229,7 +206,7 @@ class _NowPlayingState extends State<NowPlaying> {
       appBar: new AppBar(
         title: new Text("Now Playing", style: TextStyle(color: Colors.white),),
         centerTitle: true,
-        backgroundColor: Colors.orange,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: new Container(
         color: Colors.limeAccent[50],

@@ -12,6 +12,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   SongData songData;
   bool _isLoading = true;
+  String themeType = 'lightTheme';
+
 
   @override
   void initState() {
@@ -50,6 +52,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return new MPInheritedWidget(songData, _isLoading, new RootPage());
+    return new MPInheritedWidget(songData, _isLoading, themeType, new RootPage());
   }
 }

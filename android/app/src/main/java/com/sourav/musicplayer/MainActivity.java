@@ -1,4 +1,4 @@
-package com.example.musicplayer;
+package com.sourav.musicplayer;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
